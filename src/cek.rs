@@ -85,7 +85,7 @@ impl Machine {
     }
 }
 
-fn eval(term: Term) -> Term {
+pub fn eval(term: Term) -> Term {
     let mut m = Machine {
         control: term,
         env: Rc::new(Env::default()),

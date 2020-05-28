@@ -64,7 +64,7 @@ fn eval1(tm: Term) -> Result<Term, Term> {
     }
 }
 
-fn eval(tm: Term) -> Term {
+pub fn eval(tm: Term) -> Term {
     let mut t = tm;
     loop {
         match eval1(t) {

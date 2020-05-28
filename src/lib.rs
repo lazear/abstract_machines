@@ -1,5 +1,5 @@
-mod beta_reduction;
-mod cek;
+pub mod beta;
+pub mod cek;
 
 #[derive(Clone, Debug, PartialEq)]
 pub enum Term {
@@ -25,18 +25,21 @@ impl Term {
     }
 }
 
+#[macro_export]
 macro_rules! var {
     ($ex:expr) => {
         Term::Var($ex)
     };
 }
 
+#[macro_export]
 macro_rules! abs {
     ($ex:expr) => {
         Term::Abs(Box::new($ex))
     };
 }
 
+#[macro_export]
 macro_rules! app {
     ($ex:expr, $ex2:expr) => {
         Term::App(Box::new($ex), Box::new($ex2))
