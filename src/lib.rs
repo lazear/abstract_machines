@@ -1,5 +1,6 @@
 pub mod beta;
 pub mod cek;
+pub mod cps;
 
 #[derive(Clone, Debug, PartialEq)]
 pub enum Term {
